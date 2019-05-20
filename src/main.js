@@ -1,5 +1,11 @@
 if (typeof Buffer == "undefined") Buffer = require("buffer/").Buffer;
 if (typeof XMLHttpRequest == "undefined") XMLHttpRequest = require('xhr2');
+
+// Should be only for node.js
+const iso = require("isomorphic-textencoder");
+function TextEncoder(encoding) { this.encode = iso.encode };
+function TextDecoder(encoding) { this.decode = iso.decode };
+
 const BN = require("bignumber.js");
 const 
 //CLI below
